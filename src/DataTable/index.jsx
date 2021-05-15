@@ -15,8 +15,7 @@ const DataTable = ({ userData, rowsPerPage = 40 }) => {
 
   
   // should probably have a debounce function in here if this was a fetch call
-  const search = (event) => {
-    const text = event.target.value
+  const search = (text) => {
     let userDataFound = userData
 
     if (text) {
@@ -44,7 +43,7 @@ const DataTable = ({ userData, rowsPerPage = 40 }) => {
 
   return(
     <div>
-      <Search onSearch={search.bind(this)} />
+      <Search onSearch={search} />
       <table>
         <tbody>
           { displayUserData.map(user => <Row key={user.per_id} user={user} />).slice(...rowsInPageNumber(currentPageNumber)) }
