@@ -52,7 +52,7 @@ const DataTable = ({ userData, rowsPerPage = 40 }) => {
       </table>
       <Pagination
         currentPageNumber={currentPageNumber}
-        totalNumberOfPages={totalNumberOfPages}
+        totalNumberOfPages={totalNumberOfPages()}
         onChange={changeToPageNumber.bind(this)} />
     </div>
   )
