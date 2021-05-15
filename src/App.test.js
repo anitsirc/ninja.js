@@ -45,6 +45,7 @@ it('renders 5 rows', () => {
   expect(wrapper.find('tr').length).toBe(5);
 });
 
+// this test fails when its overwritten In app.js
 it('filters rows based on input', () => {
   const wrapper = mount(<App userData={userData} locale="da" rowsPerPage={5} />);
 

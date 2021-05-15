@@ -5,6 +5,7 @@ import Row from './Row'
 import Search from './Search'
 
 const DataTable = ({ userData, rowsPerPage = 40 }) => {
+  //Maybe One of these could be derived state so you dont get teh double set state in the search function
   const [displayUserData, setDisplayUserData] = useState(userData);
   const [currentPageNumber, setCurrentPageNumber] = useState(0);
 
@@ -39,7 +40,7 @@ const DataTable = ({ userData, rowsPerPage = 40 }) => {
     const startIndex = pageNumber * rowsPerPage
     return [startIndex, startIndex + rowsPerPage]
   }
-
+  //totalNumber of pages could also have been put in a useEffeckt hook 
 
   return(
     <div>
@@ -52,7 +53,7 @@ const DataTable = ({ userData, rowsPerPage = 40 }) => {
       <Pagination
         currentPageNumber={currentPageNumber}
         totalNumberOfPages={totalNumberOfPages()}
-        onChange={changeToPageNumber.bind(this)} />
+        onChange={changeToPageNumber} />
     </div>
   )
 }

@@ -3,6 +3,8 @@ import React from 'react'
 import Page from './Page'
 
 const Pagination = ({ currentPageNumber, totalNumberOfPages, onChange }) => {
+
+  // this can be done smarter im sure
   const pages =
     Array
       .from(Array(totalNumberOfPages).keys())
@@ -13,7 +15,7 @@ const Pagination = ({ currentPageNumber, totalNumberOfPages, onChange }) => {
           pageNumber={pageNumber}
           onChange={onChange} />
       })
-
+  // make this into a turnary together with changes to the above
   if (pages.length <= 1) {
     return null
   }
