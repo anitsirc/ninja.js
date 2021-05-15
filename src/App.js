@@ -2,10 +2,10 @@ import React from 'react';
 import DataTable from './DataTable';
 import './App.css';
 
-const App = (props) => {
+const App = ({userData}) => {
   return (
     <div className="container mt-3">
-      <DataTable initialRows={props.rows} locale="da" rowsPerPage={5} />
+      <DataTable initialRows={userData} locale="da" rowsPerPage={5} />
     </div>
   )
 }

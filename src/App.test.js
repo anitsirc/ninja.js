@@ -36,7 +36,7 @@ const rows = [
 ];
 
 it('renders without crashing', () => {
-  shallow(<App rows={[]} locale="da" rowsPerPage={5} />);
+  shallow(<App userData={[]} locale="da" rowsPerPage={5} />);
 });
 
 it('renders 5 rows', () => {
